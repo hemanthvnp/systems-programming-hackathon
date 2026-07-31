@@ -1,7 +1,9 @@
 #include "../include/inputbuffer.hpp"
-using namespace std;
-int main() {
-    InputBuffer* console = new InputBuffer();
-    console->DebugConsole();
+
+int main()
+{
+    InputBuffer console("");
+    console.DebugConsole();
+
     return 0;
 }

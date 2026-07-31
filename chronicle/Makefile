@@ -1,11 +1,8 @@
 CC = g++
-CFLAGS = -std=C++20
+CFLAGS = -std=c++20 -Iinclude
 
-main: chronicle
-	$(CC) $(CFLAGS) ./src/main.cpp -o console
-
-chronicle:
-	$(CC) $(CFLAGS) ./src/console.cpp -o console
+console:
+	$(CC) $(CFLAGS) src/main.cpp src/console.cpp src/inputbuffer.cpp -o console
 
 clean:
-	rm chronicle
+	rm -f console
