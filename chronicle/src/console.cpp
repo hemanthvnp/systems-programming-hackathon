@@ -1,42 +1,73 @@
-#include "../include/inputbuffer.hpp"
+#include "../include/console.hpp"
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int InputBuffer::DebugConsole()
+Console::Console() : input("")
+{
+}
+
+void Console::DebugConsole()
 {
     while (true)
     {
         cout << "ironhold> ";
-        string s;
-        cin >> s;
-        cmd = s;
-        setcmd();
 
-        if (s == ".help")
+        string line;
+        getline(cin, line);
+
+        if (line.empty())
+            continue;
+
+        if (line == ".help")
         {
             cout << ".quit       Shut down the world engine\n";
             cout << ".help       Show this message\n";
             cout << ".version    Show engine version\n";
             cout << ".status     Show world status\n";
+            continue;
         }
-        else if (s == ".version")
+
+        if (line == ".version")
         {
             cout << "Chronicle v0.1 — Ironhold World Engine\n";
+            continue;
         }
-        else if (s == ".status")
+
+        if (line == ".status")
         {
-            cout << "Feature not yet developed\n";
+            cout << "World: offline\n";
+            continue;
         }
-        else if (s == ".quit")
+
+        if (line == ".quit")
         {
             cout << "Goodbye!\n";
-            return 0;
+            return;
         }
-        else
+
+        Command cmd;
+
+        if (!parseCommand(line, cmd))
         {
-            cout << "Unknown command. Type .help\n";
+            cout << "Error: " << cmd.getError() << endl;
+            continue;
+        }
+
+        if (cmd.getType() == "SPAWN_PLAYER")
+        {
+            Player player;
+            player.id = cmd.getId();
+            player.username = cmd.getUsername();
+            player.email = cmd.getEmail();
+
+            world.spawnPlayer(player);
+        }
+        else if (cmd.getType() == "LIST_PLAYERS")
+        {
+            world.listPlayers();
         }
     }
 }

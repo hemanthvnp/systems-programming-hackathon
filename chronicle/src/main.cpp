@@ -1,8 +1,8 @@
-#include "../include/inputbuffer.hpp"
+#include "../include/console.hpp"
 
 int main()
 {
-    InputBuffer console("");
+    Console console;
     console.DebugConsole();
 
     return 0;

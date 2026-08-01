@@ -1,7 +1,10 @@
 #include "../include/inputbuffer.hpp"
+
 #include <iostream>
 
-InputBuffer::InputBuffer(std::string c)
+using namespace std;
+
+InputBuffer::InputBuffer(string c)
 {
     cmd = c;
     cmd_history_length = 0;
@@ -9,7 +12,7 @@ InputBuffer::InputBuffer(std::string c)
 
 void InputBuffer::getcmd()
 {
-    std::cout << "Current command: " << cmd << std::endl;
+    cout << cmd << endl;
 }
 
 void InputBuffer::setcmd()

@@ -14,7 +14,6 @@ public:
 
     void getcmd();
     void setcmd();
-    int DebugConsole();
 
     ~InputBuffer();
 };
