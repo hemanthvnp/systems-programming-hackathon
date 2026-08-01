@@ -7,8 +7,8 @@
 #   "Chronicle" and a version number (e.g. "v0.1").
 #   It should return MetaResult::SUCCESS (not QUIT or UNKNOWN).
 # ─────────────────────────────────────────────────────────────────
-source "$(dirname "$0")/../helpers.sh"
-BINARY="${1:-./chronicle}"
+source "$(dirname "$0")/./helpers.sh"
+BINARY="${1:-../.././chronicle}"
 NAME="M1/01 — .version output"
 OK=true
 

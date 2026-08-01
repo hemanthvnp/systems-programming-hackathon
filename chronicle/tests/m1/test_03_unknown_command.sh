@@ -8,8 +8,8 @@
 #   The process must NOT exit early — the REPL must continue until
 #   .quit is sent.
 # ─────────────────────────────────────────────────────────────────
-source "$(dirname "$0")/../helpers.sh"
-BINARY="${1:-./chronicle}"
+source "$(dirname "$0")/./helpers.sh"
+BINARY="${1:-../.././chronicle}"
 NAME="M1/03 — Unknown dot-command handled gracefully"
 OK=true
 

@@ -9,7 +9,7 @@
 #   line such as "2 entities." at the end.
 # ─────────────────────────────────────────────────────────────────
 source "$(dirname "$0")/./helpers.sh"
-BINARY="${1:-../.././console}"
+BINARY="${1:-../.././chronicle}"
 NAME="M2/02 — LIST PLAYERS shows entities and count"
 OK=true
 W=$(new_world)

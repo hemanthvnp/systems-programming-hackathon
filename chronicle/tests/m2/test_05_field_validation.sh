@@ -10,7 +10,7 @@
 #   Missing fields (incomplete SPAWN) must produce SYNTAX_ERROR.
 # ─────────────────────────────────────────────────────────────────
 source "$(dirname "$0")/./helpers.sh"
-BINARY="${1:-../.././console}"
+BINARY="${1:-../.././chronicle}"
 NAME="M2/05 — Field length limits and boundary cases"
 OK=true
 W=$(new_world)
